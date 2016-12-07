@@ -7,7 +7,11 @@ To use maven with Weblogic we need to use [Oracle Maven repository](http://docs.
 
 ## Testing
 
+#### Unit test
+$ mvn test
 
+#### Integration test
+$ mvn verify
 
 ## References
 
