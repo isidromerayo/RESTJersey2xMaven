@@ -13,6 +13,11 @@ $ mvn test
 #### Integration test
 $ mvn verify
 
+
+## Deploy
+#### Local Weblogic 12.1.3
+$ mvn clean verify -Pweblogic-1213
+
 ## References
 
 1. [Registering Jersey 2.5.1 with Weblogic 12.1.3](https://docs.oracle.com/middleware/1213/wls/RESTF/use-jersey20-ri.htm#RESTF290)

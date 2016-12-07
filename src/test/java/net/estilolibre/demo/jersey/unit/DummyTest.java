@@ -1,16 +1,18 @@
 package net.estilolibre.demo.jersey.unit;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.hamcrest.Matchers.everyItem;
 import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import static org.hamcrest.core.Every.everyItem;
 
 import org.junit.Test;
 
@@ -30,7 +32,6 @@ public class DummyTest {
 	}
 	@Test
     public void dummyHamcrest() {
-		assertThat("123",is("123"));
 		List<Integer> list = Arrays.asList(5, 2, 4);
         assertThat(list, hasSize(3));
         // ensure the order is correct
