@@ -31,8 +31,28 @@ public class MyResourceIT {
 		Invocation invocation = target.request().buildGet();
 		// Invoking the request to the RESTful API and capturing the Response.
 		Response response = invocation.invoke();
-		assertThat("Response status is NOT ok",response.getStatus(), is(equalTo((Response.Status.OK.getStatusCode()))));
-		assertThat("Got it!", is(equalTo(response.readEntity(String.class))));
+		assertThatHTTPResponseIsOk(response);
+		String expected = "Got it!";
+		assertThat(expected, is(equalTo(response.readEntity(String.class))));
 
+	}
+
+	@Test
+	public final void shouldBeResponseHTMLSayHelloName() {
+		String expected = "Hi <b>John</b> !";
+		
+		Client client = ClientBuilder.newClient();
+		WebTarget target = client.target(URL_TO_DUMMY_INTEGRATION_TEST + "/sayHi/John");
+		Invocation invocation = target.request().buildGet();
+		Response response = invocation.invoke();
+		
+		String result = response.readEntity(String.class);
+		
+		assertThatHTTPResponseIsOk(response);
+		assertThat("Expected " + expected + " but " + result + " " , expected, is(equalTo(result)));
+
+	}
+	private void assertThatHTTPResponseIsOk(Response response) {
+		assertThat("Response status is NOT ok",response.getStatus(), is(equalTo((Response.Status.OK.getStatusCode()))));
 	}
 }

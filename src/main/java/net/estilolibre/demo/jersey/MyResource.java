@@ -24,10 +24,10 @@ public class MyResource {
         return "Got it!";
     }
     
-//    @GET
-//    @Path("/sayHi/{name}")
-//    @Produces(MediaType.TEXT_HTML)
-//    public String sayHello(@PathParam("name") String name) {
-//    	return new StringBuilder("Hi <b>").append(name).append("</b> !").toString();
-//    }
+    @GET
+    @Path("/sayHi/{name}")
+    @Produces(MediaType.TEXT_HTML)
+    public String sayHello(@PathParam("name") String name) {
+    	return new StringBuilder("Hi <b>").append(name).append("</b> !").toString();
+    }
 }
