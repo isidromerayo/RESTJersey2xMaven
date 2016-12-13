@@ -37,3 +37,4 @@ $ mvn clean verify -Pweblogic-local
 2. [Configuring the Web Application to Use Jersey 2.5.1 (JAX-RS 2.0 RI)](https://docs.oracle.com/middleware/1213/wls/RESTF/use-jersey20-ri.htm#RESTF300)
 3. [Using the WebLogic Maven Plug-In](https://docs.oracle.com/middleware/1212/wls/WLPRG/maven.htm#WLPRG585)
 4. [Jersey Test Framework](https://jersey.java.net/documentation/2.5.1/test-framework.html)
+5. [Playing with JerseyTest (Jersey 2.5.1 and DI)](https://tododev.wordpress.com/2014/01/15/playing-with-jerseytest-jersey-2-5-1-and-di/)
